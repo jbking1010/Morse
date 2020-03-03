@@ -35,7 +35,22 @@ public class Settings extends AppCompatActivity {
 
     public void saveSettings(View view) {
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
 
-
+        editor.putBoolean(SWITCH_SOUND,sound.isChecked());
+        editor.putBoolean(SWITCH_VIBRATION,vibration.isChecked());
+        editor.putBoolean(SWITCH_DARK,dark.isChecked());
+    }
+    public boolean getSoundSetting(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_SOUND,true);
+    }
+    public boolean getVibrationSetting(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_VIBRATION,true);
+    }
+    public boolean getDarkSetting(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_DARK,false);
     }
 }
