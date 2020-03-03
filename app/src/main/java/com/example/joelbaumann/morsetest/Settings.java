@@ -3,6 +3,7 @@ package com.example.joelbaumann.morsetest;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Switch;
 
 public class Settings extends AppCompatActivity {
@@ -24,5 +25,8 @@ public class Settings extends AppCompatActivity {
         sound = swSound.isActivated();
         vibration = swVibration.isActivated();
         dark = swDark.isActivated();
+    }
+
+    public void saveSettings(View view) {
     }
 }

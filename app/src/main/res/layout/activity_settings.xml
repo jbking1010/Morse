@@ -25,8 +25,9 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="60dp"
         android:checked="true"
+        android:onClick="saveSettings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Switch
         android:id="@+id/swVibration"
@@ -35,6 +36,7 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="60dp"
         android:checked="true"
+        android:onClick="saveSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swSound" />
 
@@ -68,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="60dp"
+        android:onClick="saveSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swVibration" />
 
