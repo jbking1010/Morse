@@ -25,6 +25,8 @@
         <activity
             android:name=".Home"
             android:label="Home"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
