@@ -24,7 +24,7 @@
         android:id="@+id/etText"
         android:layout_width="314dp"
         android:layout_height="59dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/HintText"
         android:inputType="textPersonName"
@@ -34,47 +34,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
         tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="92dp"
         android:text="@string/Convert"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etText" />
 
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="56dp"
         android:text="@string/Output"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert" />
 
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="314dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/HintMorse"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:text="@string/Morse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput"
         tools:ignore="Autofill" />
 </android.support.constraint.ConstraintLayout>

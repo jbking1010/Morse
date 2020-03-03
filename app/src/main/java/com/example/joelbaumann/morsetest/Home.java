@@ -55,7 +55,7 @@ public class Home extends AppCompatActivity {
         //Gear for Dark Theme
         ivSettings.setImageResource(R.mipmap.gear_dark);
         //Gear for Light Theme
-
+        ivSettings.setImageResource(R.mipmap.gear);
 
         ImageButton ibTranslate = (ImageButton) findViewById(R.id.ibTranslate);
         //Translate for Dark Theme
