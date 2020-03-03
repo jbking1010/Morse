@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MorseConverter_335</string>
+    <string name="Settings">Settings</string>
+    <string name="Icon">Icon</string>
+    <string name="Sound">Sound</string>
+    <string name="Vibration">Vibration</string>
+    <string name="Dark_Theme">Dark Theme</string>
+    <string name="Home">Home</string>
+    <string name="Translate">Translate</string>
+    <string name="Communicate">Communicate</string>
+    <string name="Picture">Picture</string>
+    <string name="Translate_Options">Translate Options</string>
+    <string name="TextToMorse">Text to Morse</string>
+    <string name="MorseToText">Morse to Text</string>
+    <string name="ConvertToMorse">Convert to Morse</string>
+    <string name="EnterYourMorse">Enter your Morse</string>
+    <string name="Output">Output</string>
+    <string name="ButtonDot">•</string>
+    <string name="ButtonLine">─</string>
+    <string name="ButtonSpace">Space</string>
+    <string name="UserInput">UserInput</string>
+    <string name="Text">Text</string>
+    <string name="Convert">Convert</string>
+    <string name="HintMorse">Morse</string>
+    <string name="HintText">Text</string>
+    <string name="ConvertToText">Convert to Text</string>
+    <string name="EnterYourText">Enter your Text</string>
+    <string name="Morse">Morse</string>
+    <string name="Send">Send</string>
+    <string name="Receive">Receive</string>
+    <string name="ReceivedText">Received Text</string>
+    <string name="ReceivedMorse">Received Morse</string>
+    <string name="ButtonPipe">|</string>
+    <string name="ButtonDelete">Delete</string>
+
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:name="http://schemas.android.com/apk/res-auto">
+    <bool name="Sound">true</bool>
+    <bool name="Vibration">true</bool>
+    <bool name="Dark">false</bool>
+</resources>

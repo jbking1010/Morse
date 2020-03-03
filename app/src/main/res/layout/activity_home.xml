@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/ivSettings"
+        android:layout_width="58dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/Icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/gear"
+        android:onClick="loadSettings"/>
+
+
+    <ImageButton
+        android:id="@+id/ibTranslate"
+        android:layout_width="200dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/Picture"
+        android:onClick="loadTranslate"
+        android:scaleType="fitXY"
+        android:src="@mipmap/translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibCommunicate"
+        android:layout_width="200dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="108dp"
+        android:background="@mipmap/communicate"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/Picture"
+        android:onClick="loadCommunicate"
+        android:scaleType="fitXY"
+        android:src="@mipmap/communicate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTranslate" />
+
+    <TextView
+        android:id="@+id/tvCommunicate"
+        android:layout_width="205dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="148dp"
+        android:onClick="loadCommunicate"
+        android:text="@string/Communicate"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibCommunicate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvTranslate"
+        android:layout_width="201dp"
+        android:layout_height="30dp"
+        android:onClick="loadTranslate"
+        android:text="@string/Translate"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibTranslate" />
+</android.support.constraint.ConstraintLayout>
