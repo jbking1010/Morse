@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+<!-- test -->
     <EditText
         android:id="@+id/etText"
         android:layout_width="314dp"
