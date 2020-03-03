@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 
@@ -22,8 +23,7 @@ public class Home extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
         setTitle("Home");
-        ImageView img = (ImageView) findViewById(R.id.ivSettings);
-        img.setImageResource(R.mipmap.gear_dark);
+        setImages();
     }
 
     /*/public void loadHome(MainActivity main){
@@ -49,5 +49,25 @@ public class Home extends AppCompatActivity {
     public void setLight(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+    }
+    public void setImages(){
+        ImageView ivSettings = (ImageView) findViewById(R.id.ivSettings);
+        //Gear for Dark Theme
+        ivSettings.setImageResource(R.mipmap.gear_dark);
+        //Gear for Light Theme
+
+
+        ImageButton ibTranslate = (ImageButton) findViewById(R.id.ibTranslate);
+        //Translate for Dark Theme
+        ibTranslate.setImageResource(R.mipmap.translate_dark);
+        //Translate for Light Theme
+        ibTranslate.setImageResource(R.mipmap.translate);
+
+
+        ImageButton ibCommunicate = (ImageButton) findViewById(R.id.ibCommunicate);
+        //Communicate for Dark Theme
+        ibCommunicate.setImageResource(R.mipmap.communicate_dark);
+        //Communicate for Light Theme
+        ibCommunicate.setImageResource(R.mipmap.communicate);
     }
 }
