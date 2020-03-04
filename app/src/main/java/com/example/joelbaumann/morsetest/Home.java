@@ -1,6 +1,7 @@
 package com.example.joelbaumann.morsetest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -13,33 +14,35 @@ import java.util.Set;
 
 public class Home extends AppCompatActivity {
 
-    getSettings settings = new getSettings();
-
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String SWITCH_SOUND = "switch_sound";
+    public static final String SWITCH_VIBRATION = "switch_vibration";
+    public static final String SWITCH_DARK = "switch_dark";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //setTheme();
-        setContentView(R.layout.activity_home);
+        setTheme();
         setTitle("Home");
-        //setImages();
+        setImages();
     }
     public void setTheme(){
 
-        try{
-            //settings.saveSettings(null);
-
-            if(settings.getDarkSetting()){
+        if(getDarkSetting()){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            setContentView(R.layout.activity_home);
+
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }}catch (Exception e){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+            setContentView(R.layout.activity_home);
 
+        }
     }
+
+
+
     /*/public void loadHome(MainActivity main){
         this.main = main;
         main.setContentView(R.layout.activity_home);
@@ -63,14 +66,19 @@ public class Home extends AppCompatActivity {
         ImageButton ibCommunicate = (ImageButton) findViewById(R.id.ibCommunicate);
 
 
-        if(settings.getDarkSetting()){
+        if(getDarkSetting()){
+            ibCommunicate.setImageResource(R.mipmap.communicate_dark2);
             ibTranslate.setImageResource(R.mipmap.translate_dark);
             ivSettings.setImageResource(R.mipmap.gear_dark);
-            ibCommunicate.setImageResource(R.mipmap.communicate_dark);
 
         }else{
         ivSettings.setImageResource(R.mipmap.gear);
         ibTranslate.setImageResource(R.mipmap.translate);}
         ibCommunicate.setImageResource(R.mipmap.communicate);
     }
+
+    public boolean getDarkSetting(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_DARK,true);
+}
 }
