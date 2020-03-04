@@ -8,9 +8,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
-
-import java.util.Set;
 
 public class Home extends AppCompatActivity {
 
@@ -56,7 +53,7 @@ public class Home extends AppCompatActivity {
 
     public void loadCommunicate(View view) {startActivity(new Intent(this,Communicate.class)); }
 
-    public void loadTranslate(View view) {startActivity(new Intent(this,TranslateOptions.class)); }
+    public void loadTranslate(View view) {startActivity(new Intent(this, Receive.TranslateOptions.class)); }
 
 
 
@@ -67,14 +64,14 @@ public class Home extends AppCompatActivity {
 
 
         if(getDarkSetting()){
-            ibCommunicate.setImageResource(R.mipmap.communicate_dark2);
+            ibCommunicate.setImageResource(R.mipmap.communicate_dark);
             ibTranslate.setImageResource(R.mipmap.translate_dark);
             ivSettings.setImageResource(R.mipmap.gear_dark);
 
         }else{
-        ivSettings.setImageResource(R.mipmap.gear);
-        ibTranslate.setImageResource(R.mipmap.translate);}
-        ibCommunicate.setImageResource(R.mipmap.communicate);
+            ivSettings.setImageResource(R.mipmap.gear);
+            ibTranslate.setImageResource(R.mipmap.translate);
+            ibCommunicate.setImageResource(R.mipmap.communicate);}
     }
 
     public boolean getDarkSetting(){

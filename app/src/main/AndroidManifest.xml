@@ -15,7 +15,7 @@
         <!--<activity android:name=".MainActivity">
 
         </activity>-->
-        <activity android:name=".TranslateOptions"/>
+        <activity android:name=".Receive$TranslateOptions"/>
         <activity android:name=".Settings"/>
         <activity android:name=".Communicate"/>
         <activity android:name=".Send"/>

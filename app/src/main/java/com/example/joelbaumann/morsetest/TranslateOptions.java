@@ -15,7 +15,7 @@ public class TranslateOptions extends AppCompatActivity {
         setContentView(R.layout.activity_translate_options);
         setTitle("Translate options");
     }
-    String please_comeBack;
+
     public void loadToText(View view) {startActivity(new Intent(this,ToText.class));}
 
     public void loadToMorse(View view) {startActivity(new Intent(this,ToMorse.class));}
