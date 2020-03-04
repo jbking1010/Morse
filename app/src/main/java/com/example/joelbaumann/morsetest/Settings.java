@@ -18,6 +18,7 @@ public class Settings extends AppCompatActivity {
     public static final String SWITCH_VIBRATION = "switch_vibration";
     public static final String SWITCH_DARK = "switch_dark";
 
+    getSettings get = new getSettings();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,18 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         setTitle("Settings");
 
-        Switch sound = findViewById(R.id.swSound);
-        Switch vibration = findViewById(R.id.swVibration);
-        Switch dark = findViewById(R.id.swDark);
+        sound = findViewById(R.id.swSound);
+        vibration = findViewById(R.id.swVibration);
+        dark = findViewById(R.id.swDark);
+
+        try {
+            System.out.println(getDarkSetting());
+            sound.setChecked(getSoundSetting());
+            vibration.setChecked(getVibrationSetting());
+            dark.setChecked(getDarkSetting());
+        }catch (Exception e){
+
+        }
 
 
     }
@@ -45,12 +55,15 @@ public class Settings extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_SOUND,true);
     }
+
     public boolean getVibrationSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_VIBRATION,true);
     }
+
     public boolean getDarkSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_DARK,false);
     }
+
 }
