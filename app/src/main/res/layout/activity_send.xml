@@ -17,7 +17,7 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!-- test -->
+
 
     <EditText
         android:id="@+id/etText"
@@ -26,8 +26,10 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+
+        android:maxLines="10"
+        android:inputType="textMultiLine"
         android:hint="@string/EnterYourText"
-        android:inputType="textPersonName"
         android:singleLine="false"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginTop="44dp"
-        android:text="@string/Output"
+        android:text="@string/Morse"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etText" />
@@ -52,8 +54,10 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:enabled="false"
         android:hint="@string/Morse"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
         android:singleLine="false"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
