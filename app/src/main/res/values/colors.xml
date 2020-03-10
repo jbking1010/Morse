@@ -6,4 +6,5 @@
     <color name="colorButtonMenu">#bdc1c7</color>
     <color name="colorBlack">#000000</color>
     <color name="colorDarkgrey">#808080</color>
+    <color name="colorError">#e30909</color>
 </resources>

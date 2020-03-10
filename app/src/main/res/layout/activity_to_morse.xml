@@ -40,7 +40,7 @@
         android:id="@+id/btnConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="72dp"
         android:text="@string/Convert"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,22 +48,25 @@
         app:layout_constraintTop_toBottomOf="@+id/etText" />
 
     <TextView
-        android:id="@+id/tvOutput"
+        android:id="@+id/tvError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="56dp"
-        android:text="@string/Output"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ErrorText"
+        android:textColor="@color/colorError"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConvert" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
+        tools:visibility="gone" />
 
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="314dp"
         android:layout_height="59dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:enabled="false"
         android:hint="@string/Morse"
@@ -74,4 +77,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOutput"
         tools:ignore="Autofill" />
+
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/Output"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvError" />
+
 </android.support.constraint.ConstraintLayout>

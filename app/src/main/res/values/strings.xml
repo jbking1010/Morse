@@ -33,5 +33,7 @@
     <string name="ReceivedMorse">Received Morse</string>
     <string name="ButtonPipe">|</string>
     <string name="ButtonDelete">Delete</string>
+    <string name="ButtonClear">Clear</string>
+    <string name="ErrorText">Input invalid</string>
 
 </resources>

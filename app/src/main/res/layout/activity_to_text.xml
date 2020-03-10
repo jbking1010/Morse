@@ -57,10 +57,8 @@
         android:inputType="textMultiLine"
         android:maxLines="150"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOutput"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="Autofill" />
 
     <Button
@@ -153,7 +151,34 @@
             app:layout_constraintBottom_toTopOf="@+id/btnSpace"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/ButtonClear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toEndOf="@+id/btnSpace" />
+
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/ErrorText"
+        android:textColor="@color/colorError"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etOutput"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="gone" />
 
 
     <!--<Button
