@@ -18,7 +18,8 @@
     <string name="ButtonDot">•</string>
     <string name="ButtonLine">─</string>
     <string name="ButtonSpace">Space</string>
-    <string name="UserInput">UserInput</string>
+    <string name="UserInput">Text</string>
+    <string name="UserInputMorse">Morse</string>
     <string name="Text">Text</string>
     <string name="Convert">Convert</string>
     <string name="HintMorse">Morse</string>
