@@ -65,7 +65,7 @@ public class ToText extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    //Onclick für alle Buttons
+    //Onclick für alle Buttons /unterscheided zwischen den einzelenen Buttons
     @Override
     public void onClick(View view) {
         Button b =(Button)findViewById(view.getId());

@@ -22,8 +22,6 @@ public class Receive extends AppCompatActivity {
     public static class TranslateOptions extends AppCompatActivity {
 
 
-
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

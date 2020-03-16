@@ -16,7 +16,8 @@ public class TranslateOptions extends AppCompatActivity {
         setTitle("Translate options");
     }
 
+    //onClick wechselt zu ToText
     public void loadToText(View view) {startActivity(new Intent(this,ToText.class));}
-
+    //onClick wechselt zu ToMorse
     public void loadToMorse(View view) {startActivity(new Intent(this,ToMorse.class));}
 }

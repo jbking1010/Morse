@@ -14,7 +14,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+/*/////////////////////////////////////////////////////
+/////////   Testing only //////////////////////////////
+////////////////////////////////////////////////////*/
     boolean einstellungVibration = false;
     boolean einstellungSound = true;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonFlash;
     //float valueLight;
     final Handler handler = new Handler();
+
     //Boolean timing = false;
 
     float base;
