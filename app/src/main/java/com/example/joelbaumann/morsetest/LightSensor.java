@@ -30,6 +30,7 @@ public class LightSensor extends AppCompatActivity {
     private final SensorEventListener lightSensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent sensorEvent) {
+            //wenn sich das Lichtverhältniss verändert
             if (sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT){
                 valueLight = sensorEvent.values[0];
                 checkLight();
@@ -42,11 +43,13 @@ public class LightSensor extends AppCompatActivity {
         }
     };
 
+    //setzt den messwert
     public void setBase(){
         base = valueLight;
     }
 
 
+    //überprüft das licht level und misst die Zeit des impulses
     public void checkLight(){
         if (base > 0 && valueLight > base+25 && !timing){
             timing = true;
@@ -57,18 +60,23 @@ public class LightSensor extends AppCompatActivity {
             timing=false;
         }
     }
+    //überprüft die Zeit des impulses und ordnet sie ein
     public void checkTime(float duration){
         long shortTime = 150;
         long longTime = 300;
         if (duration <= shortTime+75 && duration >= shortTime-75){
+            //wenn "short" erkennt wurde
             detectShort(duration);
         }else if ((duration <= longTime+75 && duration > shortTime+75) && duration >= longTime-75){
+            //wenn "long" erkennt
             detectLong(duration);
         }
     }
+    //testing only
     public void detectShort(float time){
         activity.input2.setText("short   :"+time);
     }
+    //testing only
     public void detectLong(float time){
         activity.input2.setText("long    :"+time);
 

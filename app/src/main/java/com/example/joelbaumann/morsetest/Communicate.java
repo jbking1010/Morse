@@ -22,14 +22,16 @@ public class Communicate extends AppCompatActivity {
 
         Button btnSend = (Button)findViewById(R.id.btnSend);
         Button btnReceive = (Button)findViewById(R.id.btnReceive);
-  //ee
 
+
+        //setzt image dark theme
         if (getDarkSetting()){
             Drawable drawSend = getResources().getDrawable(R.mipmap.back_right_dark);
             btnSend.setCompoundDrawablesWithIntrinsicBounds(null, null, (drawSend), null);
             Drawable drawReceive = getResources().getDrawable(R.mipmap.back_left_dark);
             btnReceive.setCompoundDrawablesWithIntrinsicBounds(null, null, (drawReceive),null );
         }else{
+            //setzt image white theme
             Drawable drawSend = getResources().getDrawable(R.mipmap.back_right);
             btnSend.setCompoundDrawablesWithIntrinsicBounds(null, null, (drawSend), null);
             Drawable drawReceive = getResources().getDrawable(R.mipmap.back_left);
@@ -38,10 +40,12 @@ public class Communicate extends AppCompatActivity {
 
     }
 
+    //onClick wechselt zu Send
     public void loadSend(View view) {startActivity(new Intent(this,Send.class));}
-
+    //onClick wechselt zu Receive
     public void loadReceive(View view) {startActivity(new Intent(this,Receive.class));}
 
+    //holt den wert der Shared preferences für das dark theme
     public boolean getDarkSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_DARK,true);
