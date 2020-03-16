@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,7 @@
     android:layout_height="match_parent"
     >
 
-
+<!-- Hier wird der "Senden"-Knopf erstellt -->
     <Button
         android:id="@+id/btnSend"
         android:layout_width="180dp"
@@ -21,6 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!-- Hier wird der "Erhalten"-Knopf erstellt-->
     <Button
         android:id="@+id/btnReceive"
         android:layout_width="180dp"
