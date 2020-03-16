@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <!-- Hier wird das Constraint Layout erstellt -->
+    <!-- Hier wird die Imageview für die Einstellungen erstellt. -->
 
     <ImageView
         android:id="@+id/ivSettings"
@@ -21,7 +21,7 @@
         app:srcCompat="@mipmap/gear"
         android:onClick="loadSettings"/>
 
-
+    <!-- Hier wird der Imagebutton für das Übersetzen erstellt -->
     <ImageButton
         android:id="@+id/ibTranslate"
         android:layout_width="200dp"
@@ -36,6 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Hier wird der Imagebutton für das Kommunizieren erstellt -->
     <ImageButton
         android:id="@+id/ibCommunicate"
         android:layout_width="200dp"
@@ -50,6 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTranslate" />
 
+    <!-- Hier wird die Textview für das Kommunizieren erstellt -->
     <TextView
         android:id="@+id/tvCommunicate"
         android:layout_width="200dp"
@@ -66,6 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ibCommunicate"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Hier wird die Textview für das Übersetzen erstellt -->
     <TextView
         android:id="@+id/tvTranslate"
         android:layout_width="200dp"

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,7 @@
     android:layout_height="match_parent"
     >
 
-
+    <!-- Hier wird die Textview mit dem Titel Morse für die Benutzereingabe erstellt.-->
     <TextView
         android:id="@+id/tvUserInput"
         android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Hier wird das eigentliche Feld für die Benutzereingabe erstellt-->
     <EditText
         android:id="@+id/etUserInput"
         android:layout_width="314dp"
@@ -36,16 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
         tools:ignore="Autofill" />
 
-    <!--<view
-        android:id="@+id/viewButtons"
-        android:layout_width="414dp"
-        android:layout_height="221dp"
-        android:background="@color/colorButtonMenu"
-        android:visibility="visible"
-        class="android.view.ViewGroup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />-->
-
+    <!-- Hier wird das Feld für die Ausgabe erstellt -->
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="314dp"
@@ -64,6 +57,7 @@
         app:layout_constraintVertical_bias="0.127"
         tools:ignore="Autofill" />
 
+    <!-- Hier wird der Knopf für das Konvertieren von Morse zu Text erstellt -->
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="wrap_content"
@@ -76,6 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserInput" />
 
+    <!-- Hier wird die Textview mit dem Titel Output erstellt -->
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
@@ -87,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnConvert" />
 
+    <!-- Hier wird ein weiteres Constraint Layout das die "Tastatur" enthält erstellt-->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -98,6 +94,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+        <!-- Hier wird der Button für das Löschen erstellt -->
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
@@ -111,6 +108,7 @@
             app:layout_constraintHorizontal_bias="0.832"
             app:layout_constraintStart_toEndOf="@+id/btnSpace" />
 
+        <!-- Hier wird der Button für den Leerschlag erstellt -->
         <Button
             android:id="@+id/btnSpace"
             android:layout_width="wrap_content"
@@ -123,6 +121,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- Hier wird der Button für den langen Morse erstellt -->
         <Button
             android:id="@+id/btnLine"
             android:layout_width="wrap_content"
@@ -135,6 +134,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btnDelete"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Hier wird der Button für die Lücke zwischen den Buchstaben erstellt -->
         <Button
             android:id="@+id/btnPipe"
             android:layout_width="wrap_content"
@@ -148,6 +148,7 @@
             app:layout_constraintStart_toEndOf="@+id/btnDot"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Hier wird der Button für den Punkt erstellt -->
         <Button
             android:id="@+id/btnDot"
             android:layout_width="wrap_content"
@@ -160,6 +161,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btnSpace"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- Hier wird der Button für das Leeren des Inhalts erstellt -->
         <Button
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
@@ -174,6 +176,7 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <!-- Hier wird eine Textview für den Fall das es einen Error geben sollte erstellt-->
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"

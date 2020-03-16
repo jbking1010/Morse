@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,7 @@
     android:layout_height="match_parent"
     >
 
-
+    <!-- Hier wird die Textview mit dem Titel Text für die Benutzereingabe erstellt.-->
     <TextView
         android:id="@+id/tvUserInput"
         android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Hier wird das eigentliche Feld für die Benutzereingabe erstellt-->
     <EditText
         android:id="@+id/etText"
         android:layout_width="314dp"
@@ -27,7 +29,6 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/EnterYourText"
-
         android:maxLines="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
@@ -36,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
         tools:ignore="Autofill" />
 
+    <!-- Hier wird der Knopf für das Konvertieren von Text zu Morse erstellt -->
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="wrap_content"
@@ -48,6 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etText"/>
 
+    <!-- Hier wird eine Textview für den Fall das es einen Error geben sollte erstellt-->
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
@@ -62,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnConvert"
         tools:visibility="gone" />
 
+    <!-- Hier wird das Feld für die Ausgabe erstellt -->
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="314dp"
@@ -79,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvOutput"
         tools:ignore="Autofill" />
 
+    <!-- Hier wird die Textview mit dem Titel Output erstellt -->
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"

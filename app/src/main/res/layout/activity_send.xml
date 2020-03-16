@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
+    <!-- Hier wird der Text "Text" für die Benutzereingabe erstellt -->
     <TextView
         android:id="@+id/tvUserInput"
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!-- Hier wird das Feld für die eigentliche Benutzereingabe erstellt -->
     <EditText
         android:id="@+id/etText"
         android:layout_width="314dp"
@@ -26,7 +27,6 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-
         android:maxLines="10"
         android:inputType="textMultiLine"
         android:hint="@string/EnterYourText"
@@ -36,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
         tools:ignore="Autofill" />
 
+    <!-- Hier wird der Textview mit dem Text "Morse" erstellt -->
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
@@ -47,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etText" />
 
+    <!-- Hier wird das Feld für die Ausgabe erstellt -->
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="314dp"
@@ -64,6 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvOutput"
         tools:ignore="Autofill" />
 
+    <!-- Hier wird der Knopf für das Senden erstellt. -->
     <Button
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
@@ -76,6 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etOutput" />
 
+    <!-- Hier wird eine Textview die im Fall eines Errors erscheint erstellt. -->
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
