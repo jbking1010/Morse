@@ -43,9 +43,10 @@
         android:layout_marginTop="72dp"
         android:text="@string/Convert"
         android:textSize="18sp"
+        android:onClick="convertToMorse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etText" />
+        app:layout_constraintTop_toBottomOf="@+id/etText"/>
 
     <TextView
         android:id="@+id/tvError"

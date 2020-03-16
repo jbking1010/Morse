@@ -15,13 +15,27 @@
         <!--<activity android:name=".MainActivity">
 
         </activity>-->
-        <activity android:name=".Receive$TranslateOptions"/>
-        <activity android:name=".Settings"/>
-        <activity android:name=".Communicate"/>
-        <activity android:name=".Send"/>
-        <activity android:name=".Receive"/>
-        <activity android:name=".ToText"/>
-        <activity android:name=".ToMorse"/>
+        <activity
+            android:name=".Receive$TranslateOptions"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Settings"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Communicate"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Send"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Receive"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ToText"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ToMorse"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Home"
             android:label="MorseApp"

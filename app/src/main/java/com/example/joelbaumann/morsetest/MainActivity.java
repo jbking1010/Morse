@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         String morse = morseField.getText().toString();
         String text = textField.getText().toString();
 
-        if (morse.length() > 0 && text.length()==0){
+        /*if (morse.length() > 0 && text.length()==0){
             if(m.checkMorse(morse)){
                 //textField.setText(m.convertToText(morse));
             }
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 morseField.setText("valid");
                 m.convertToMorse(text);
             }
-        }
+        }*/
     }
 
 

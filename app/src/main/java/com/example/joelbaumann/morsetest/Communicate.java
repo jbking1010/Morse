@@ -22,6 +22,7 @@ public class Communicate extends AppCompatActivity {
 
         Button btnSend = (Button)findViewById(R.id.btnSend);
         Button btnReceive = (Button)findViewById(R.id.btnReceive);
+  //ee
 
         if (getDarkSetting()){
             Drawable drawSend = getResources().getDrawable(R.mipmap.back_right_dark);

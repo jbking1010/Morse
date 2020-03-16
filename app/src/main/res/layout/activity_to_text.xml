@@ -26,6 +26,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:enabled="false"
         android:hint="@string/EnterYourMorse"
         android:maxLines="10"
         android:inputType="textMultiLine"
@@ -49,7 +50,7 @@
         android:id="@+id/etOutput"
         android:layout_width="314dp"
         android:layout_height="59dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:enabled="false"
@@ -57,8 +58,10 @@
         android:inputType="textMultiLine"
         android:maxLines="150"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOutput"
+        app:layout_constraintVertical_bias="0.127"
         tools:ignore="Autofill" />
 
     <Button
@@ -68,6 +71,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/Convert"
         android:textSize="18sp"
+        android:onClick="convertToText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserInput" />
@@ -101,6 +105,7 @@
             android:layout_marginBottom="32dp"
             android:text="@string/ButtonDelete"
             android:visibility="visible"
+            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.832"
@@ -114,6 +119,7 @@
             android:layout_marginBottom="32dp"
             android:text="@string/ButtonSpace"
             android:visibility="visible"
+            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -125,6 +131,7 @@
             android:layout_marginBottom="68dp"
             android:text="@string/ButtonLine"
             android:visibility="visible"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/btnDelete"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -135,6 +142,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/ButtonPipe"
             android:visibility="visible"
+            android:onClick="onClick"
             app:layout_constraintEnd_toStartOf="@+id/btnLine"
             app:layout_constraintHorizontal_bias="0.577"
             app:layout_constraintStart_toEndOf="@+id/btnDot"
@@ -148,6 +156,7 @@
             android:layout_marginBottom="68dp"
             android:text="@string/ButtonDot"
             android:visibility="visible"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/btnSpace"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -157,6 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:text="@string/ButtonClear"
+            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnDelete"
             app:layout_constraintHorizontal_bias="0.506"
@@ -168,17 +178,15 @@
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="148dp"
         android:text="@string/ErrorText"
         android:textColor="@color/colorError"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/tvOutput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etOutput"
-        app:layout_constraintVertical_bias="0.0"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
+        tools:visibility="visible" />
 
 
     <!--<Button
