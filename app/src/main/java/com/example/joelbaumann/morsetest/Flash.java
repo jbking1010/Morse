@@ -2,6 +2,7 @@ package com.example.joelbaumann.morsetest;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.media.MediaPlayer;
@@ -9,23 +10,25 @@ import android.os.SystemClock;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class Flash{
 
-     CameraManager cameraManager;
+    CameraManager cameraManager;
      final MediaPlayer soundShort;
      final MediaPlayer soundLong;
-     MainActivity main;
+     Activity activity;
      Vibrator vib;
 
 
 
-    public Flash(MainActivity main){
-        this.cameraManager = (CameraManager)main.getSystemService(Context.CAMERA_SERVICE);
-        vib = (Vibrator)main.getSystemService(Context.VIBRATOR_SERVICE);
-        soundShort = MediaPlayer.create(main, R.raw.soundshort);
-        soundLong = MediaPlayer.create(main, R.raw.soundlong);
-        this.main = main;
+    public Flash(Activity activity){
+        this.cameraManager = (CameraManager)activity.getSystemService(Context.CAMERA_SERVICE);
+        vib = (Vibrator)activity.getSystemService(Context.VIBRATOR_SERVICE);
+        soundShort = MediaPlayer.create(activity, R.raw.soundshort);
+        soundLong = MediaPlayer.create(activity, R.raw.soundlong);
+        this.activity = activity;
 
     }
     //Clitzt einmal kurz
@@ -36,6 +39,8 @@ public class Flash{
     public void flashLong(){
         flash(350,soundLong);
     }
+    //blitzt lange für einen Leerschkag
+    public void flashPause(){flash(500,soundPause);}
 
     //Blitz methode
     private void flash(int duration, MediaPlayer sound){
@@ -45,10 +50,10 @@ public class Flash{
             //SChaltet den Blitz an
             cameraManager.setTorchMode(cameraId, true);
             //wenn der Sound aktiviert ist
-            if (main.einstellungSound)
+            if (getSoundSetting())
                 sound.start();
             //wenn vibration aktiviert ist
-            if (main.einstellungVibration)
+            if (getVibrationSetting())
                 vib.vibrate(duration);
             //bestimmt die Milisekunden der dauer des Blitzes
             SystemClock.sleep(duration);
@@ -60,6 +65,19 @@ public class Flash{
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
+    }
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String SWITCH_SOUND = "switch_sound";
+    public static final String SWITCH_VIBRATION = "switch_vibration";
+
+    public boolean getSoundSetting(){
+        SharedPreferences sp = activity.getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_SOUND,true);
+    }
+
+    public boolean getVibrationSetting(){
+        SharedPreferences sp = activity.getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        return sp.getBoolean(SWITCH_VIBRATION,true);
     }
 
 }

@@ -1,8 +1,10 @@
 package com.example.joelbaumann.morsetest;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,6 +24,8 @@ public class ToMorse extends AppCompatActivity {
         setTitle("ToMorse");
         etText = (EditText)findViewById(R.id.etText);
         etText.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(etText, InputMethodManager.SHOW_IMPLICIT);
         etOutput = (EditText)findViewById(R.id.etOutput);
         tvError = (TextView)findViewById(R.id.tvError);
         tvError.setVisibility(View.INVISIBLE);
