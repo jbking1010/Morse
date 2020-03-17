@@ -14,7 +14,7 @@ public class ToMorse extends AppCompatActivity {
     //input
     EditText etText;
     //output
-    EditText etOutput;
+    TextView etOutput;
     TextView tvError;
 
     @Override
