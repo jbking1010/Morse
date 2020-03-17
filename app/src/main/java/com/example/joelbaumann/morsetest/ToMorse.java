@@ -22,12 +22,12 @@ public class ToMorse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_morse);
         setTitle("ToMorse");
-        etText = (EditText)findViewById(R.id.etText);
+        etText = (EditText) findViewById(R.id.etText);
         etText.requestFocus();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(etText, InputMethodManager.SHOW_IMPLICIT);
-        etOutput = (EditText)findViewById(R.id.etOutput);
-        tvError = (TextView)findViewById(R.id.tvError);
+        etOutput = (EditText) findViewById(R.id.etOutput);
+        tvError = (TextView) findViewById(R.id.tvError);
         tvError.setVisibility(View.INVISIBLE);
 
 
@@ -36,13 +36,14 @@ public class ToMorse extends AppCompatActivity {
     //setzt den input auf Morse
     public void convertToMorse(View view) {
         String input = etText.getText().toString();
-        if(morse.checkText(input)){
+        if (morse.checkText(input)) {
             tvError.setVisibility(View.INVISIBLE);
-            etOutput.setText(morse.convertToMorse(input));}
-        else{
+            etOutput.setText(morse.convertToMorse(input));
+        } else {
             //setzt error und cleared das Eingabefeld
             tvError.setVisibility(View.VISIBLE);
             etOutput.setText("");
         }
+
     }
 }
