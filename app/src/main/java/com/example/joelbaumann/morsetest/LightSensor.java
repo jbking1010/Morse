@@ -18,13 +18,14 @@ public class LightSensor extends AppCompatActivity {
     Boolean timing = false;
     long tStart;
     long tStop;
-    MainActivity activity;
+    Receive activity;
+    Morse morse = new Morse();
 
     public LightSensor(Activity activity){
         SensorManager sensorManager = (SensorManager) activity.getSystemService(SENSOR_SERVICE);
         Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         sensorManager.registerListener(lightSensorListener,lightSensor,SensorManager.SENSOR_DELAY_NORMAL);
-        this.activity = (MainActivity)activity;
+        this.activity = (Receive) activity;
     }
 
     private final SensorEventListener lightSensorListener = new SensorEventListener() {
@@ -36,11 +37,8 @@ public class LightSensor extends AppCompatActivity {
                 checkLight();
             }
         }
-
         @Override
-        public void onAccuracyChanged(Sensor sensor, int i) {
-
-        }
+        public void onAccuracyChanged(Sensor sensor, int i) {}
     };
 
     //setzt den messwert
@@ -64,21 +62,29 @@ public class LightSensor extends AppCompatActivity {
     public void checkTime(float duration){
         long shortTime = 150;
         long longTime = 300;
+        long pauseTime = 450;
+        long wordTime = 700;
         if (duration <= shortTime+75 && duration >= shortTime-75){
             //wenn "short" erkennt wurde
-            detectShort(duration);
+            activity.output.setText(activity.output.getText().toString()+"•");
         }else if ((duration <= longTime+75 && duration > shortTime+75) && duration >= longTime-75){
             //wenn "long" erkennt
-            detectLong(duration);
+            activity.output.setText(activity.output.getText().toString()+"─");
+        }else if ((duration <= pauseTime+75 && duration > longTime+75) && duration >= pauseTime-75){
+            //wenn "Space" erkennt
+            activity.output.setText(activity.output.getText().toString()+" ");
+        }else if ((duration <= wordTime+75 && duration > pauseTime+75) && duration >= wordTime-75){
+            //wenn "Wordende" erkennt
+            activity.output.setText(activity.output.getText().toString()+"|");
         }
     }
     //testing only
     public void detectShort(float time){
-        activity.input2.setText("short   :"+time);
+       // activity.out.setText("short   :"+time);
     }
     //testing only
     public void detectLong(float time){
-        activity.input2.setText("long    :"+time);
+        //activity.i.setText("long    :"+time);
 
     }
 }

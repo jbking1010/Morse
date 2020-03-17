@@ -43,14 +43,16 @@ public class Flash{
         flash(350,soundLong);
     }
     //blitzt lange für einen Leerschkag
-    public void flashPause(){flash(500,soundpause);}
+    public void flashPause(){flash(450,soundpause);}
+    //blitzt länge für ein neues word
+    public void flashWord(){flash(700,soundpause);}
 
     //Blitz methode
     private void flash(int duration, MediaPlayer sound){
         try {
             //wenn auf eine Kamera zugegriffen werden kann
             String cameraId = cameraManager.getCameraIdList()[0];
-            //SChaltet den Blitz an
+            //Schaltet den Blitz an
             cameraManager.setTorchMode(cameraId, true);
             //wenn der Sound aktiviert ist
             if (getSoundSetting())

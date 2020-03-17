@@ -15,9 +15,10 @@ import static com.example.joelbaumann.morsetest.Settings.SWITCH_DARK;
 
 public class Receive extends AppCompatActivity {
 
-    private EditText input;
-    private EditText output;
+    public EditText input;
+    public EditText output;
     private TextView tvError;
+    LightSensor light;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,13 @@ public class Receive extends AppCompatActivity {
         input.requestFocus();
         output= (EditText)findViewById(R.id.etMorse);
         tvError=(TextView)findViewById(R.id.tvError);
+        light = new LightSensor(this);
     }
 
     //onClick receive
     public void receive() {
         System.out.println("confiremed");
+        light.setBase();
     }
     //confirmation popUp
     public void popUp(View view){

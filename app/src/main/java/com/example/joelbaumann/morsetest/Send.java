@@ -66,9 +66,9 @@ public class Send extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
-        builder.setTitle("Calibration");
-        builder.setMessage("The Light level will be calibrated after you press the confirm Button");
-        builder.setPositiveButton("Confirm",
+        builder.setTitle("Send this Message");
+        builder.setMessage("You are about to send this Message: \n"+input.getText().toString());
+        builder.setPositiveButton("Send",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -99,10 +99,11 @@ public class Send extends AppCompatActivity {
                         break;
                     case '|':
                         //output.setText(output.getText().toString()+"|");
-                        flash.flashPause();
+                        flash.flashWord();
                         break;
                 }
             }
+            flash.flashPause();
             //output.setText(output.getText().toString()+"   ");
 
         }
