@@ -66,16 +66,17 @@
         tools:visibility="gone" />
 
     <!-- Hier wird das Feld für die Ausgabe erstellt -->
-    <TextView
+    <EditText
         android:id="@+id/etOutput"
         android:layout_width="331dp"
         android:layout_height="320dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:focusable="false"
         android:scrollbars="vertical"
         android:hint="@string/Morse"
-        android:inputType="none"
+        android:inputType="textMultiLine"
         android:maxLines="150"
         android:singleLine="false"
         android:textSize="22sp"
