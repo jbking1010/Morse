@@ -107,5 +107,6 @@ public class Send extends AppCompatActivity {
             //output.setText(output.getText().toString()+"   ");
 
         }
+        flash.flashStop();
     }
 }

@@ -13,6 +13,10 @@ import static android.content.Context.SENSOR_SERVICE;
 
 public class LightSensor extends AppCompatActivity {
 
+    SensorManager sensorManager;
+    Sensor sensor;
+
+
     float valueLight;
     float base;
     Boolean timing = false;
@@ -22,9 +26,9 @@ public class LightSensor extends AppCompatActivity {
     Morse morse = new Morse();
 
     public LightSensor(Activity activity){
-        SensorManager sensorManager = (SensorManager) activity.getSystemService(SENSOR_SERVICE);
-        Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-        sensorManager.registerListener(lightSensorListener,lightSensor,SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager = (SensorManager) activity.getSystemService(SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        sensorManager.registerListener(lightSensorListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
         this.activity = (Receive) activity;
     }
 
@@ -60,22 +64,27 @@ public class LightSensor extends AppCompatActivity {
     }
     //überprüft die Zeit des impulses und ordnet sie ein
     public void checkTime(float duration){
-        long shortTime = 150;
-        long longTime = 300;
-        long pauseTime = 450;
-        long wordTime = 700;
-        if (duration <= shortTime+75 && duration >= shortTime-75){
-            //wenn "short" erkennt wurde
+        long pauseTime = 50;
+        long shortTime = 200;
+        long longTime = 350;
+        long wordTime = 500;
+        long stopTime = 750;
+        if (duration <= pauseTime+75 && duration >= pauseTime-75){
+            //wenn "space" erkennt wurde
+            activity.output.setText(activity.output.getText().toString()+" ");
+        }else if ((duration <= shortTime+75 && duration > pauseTime+75) && duration >= shortTime-75){
+            //wenn "short" erkennt
             activity.output.setText(activity.output.getText().toString()+"•");
         }else if ((duration <= longTime+75 && duration > shortTime+75) && duration >= longTime-75){
             //wenn "long" erkennt
             activity.output.setText(activity.output.getText().toString()+"─");
-        }else if ((duration <= pauseTime+75 && duration > longTime+75) && duration >= pauseTime-75){
-            //wenn "Space" erkennt
-            activity.output.setText(activity.output.getText().toString()+" ");
-        }else if ((duration <= wordTime+75 && duration > pauseTime+75) && duration >= wordTime-75){
+        }else if ((duration <= wordTime+75 && duration > longTime+75) && duration >= wordTime-75){
             //wenn "Wordende" erkennt
             activity.output.setText(activity.output.getText().toString()+"|");
+        }else if ((duration <= stopTime+75 && duration > wordTime+75) && duration >= stopTime-75){
+            //wenn "stop" erkennt
+            sensorManager.unregisterListener(lightSensorListener);
+            System.out.println("stoped");
         }
     }
     //testing only

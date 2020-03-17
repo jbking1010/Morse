@@ -36,16 +36,18 @@ public class Flash{
     }
     //Clitzt einmal kurz
     public void flashShort(){
-        flash(175,soundShort);
+        flash(200,soundShort);
     }
     //blitzt einmal lang
     public void flashLong(){
         flash(350,soundLong);
     }
     //blitzt lange für einen Leerschkag
-    public void flashPause(){flash(450,soundpause);}
+    public void flashPause(){flash(50,soundpause);}
     //blitzt länge für ein neues word
-    public void flashWord(){flash(700,soundpause);}
+    public void flashWord(){flash(500,soundpause);}
+    //blitzt länge für stop
+    public void flashStop(){flash(750,soundpause);}
 
     //Blitz methode
     private void flash(int duration, MediaPlayer sound){
