@@ -1,44 +1,52 @@
 package com.example.joelbaumann.morsetest;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import static com.example.joelbaumann.morsetest.Settings.SHARED_PREFS;
 import static com.example.joelbaumann.morsetest.Settings.SWITCH_DARK;
 
 public class Receive extends AppCompatActivity {
 
+    private EditText input;
+    private EditText output;
+    private TextView tvError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive);
         setTitle("Receive");
+        input = (EditText)findViewById(R.id.etText);
+        output= (EditText)findViewById(R.id.etMorse);
+        tvError=(TextView)findViewById(R.id.tvError);
     }
 
-    public static class TranslateOptions extends AppCompatActivity {
-
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_translate_options);
-            if(getDarkSetting()){
-
-            }
-            setTitle("Translate options");
-        }
-
-        public void loadToText(View view) {startActivity(new Intent(this,ToText.class));}
-
-        public void loadToMorse(View view) {startActivity(new Intent(this,ToMorse.class));}
-
-        public boolean getDarkSetting(){
-            SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-            return sp.getBoolean(SWITCH_DARK,true);
-        }
+    //onClick receive
+    public void receive() {
+        System.out.println("confiremed");
+    }
+    //confirmation popUp
+    public void popUp(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle("Calibration");
+        builder.setMessage("The Light level will be calibrated after you press the confirm Button");
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        receive();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
