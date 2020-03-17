@@ -22,16 +22,22 @@ public class Send extends AppCompatActivity {
         setContentView(R.layout.activity_send);
         setTitle("Send");
         input = (EditText)findViewById(R.id.etText);
+        input.requestFocus();
         output = (EditText)findViewById(R.id.etOutput);
         tvError = (TextView)findViewById(R.id.tvError);
+        tvError.setVisibility(View.INVISIBLE);
     }
 
     public void send(View view) {
         if (input.getText().toString()!=""){
             String in = input.getText().toString();
             if (morse.checkText(in)){
+                tvError.setVisibility(View.INVISIBLE);
                 String morseCode = morse.convertToMorse(in);
                 convert(morseCode);
+            }else{
+                tvError.setVisibility(View.VISIBLE);
+                input.setText("");
             }
         }
     }

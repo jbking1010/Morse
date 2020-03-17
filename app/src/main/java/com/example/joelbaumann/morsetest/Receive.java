@@ -25,6 +25,7 @@ public class Receive extends AppCompatActivity {
         setContentView(R.layout.activity_receive);
         setTitle("Receive");
         input = (EditText)findViewById(R.id.etText);
+        input.requestFocus();
         output= (EditText)findViewById(R.id.etMorse);
         tvError=(TextView)findViewById(R.id.tvError);
     }

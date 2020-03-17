@@ -21,6 +21,7 @@ public class ToMorse extends AppCompatActivity {
         setContentView(R.layout.activity_to_morse);
         setTitle("ToMorse");
         etText = (EditText)findViewById(R.id.etText);
+        etText.requestFocus();
         etOutput = (EditText)findViewById(R.id.etOutput);
         tvError = (TextView)findViewById(R.id.tvError);
         tvError.setVisibility(View.INVISIBLE);

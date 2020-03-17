@@ -53,7 +53,7 @@ public class Home extends AppCompatActivity {
 
     public void loadCommunicate(View view) {startActivity(new Intent(this,Communicate.class)); }
 
-    public void loadTranslate(View view) {startActivity(new Intent(this, Receive.TranslateOptions.class)); }
+    public void loadTranslate(View view) {startActivity(new Intent(this, TranslateOptions.class)); }
 
 
 
