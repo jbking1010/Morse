@@ -32,7 +32,7 @@ public class ToText extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_text);
-        setTitle("ToText");
+        setTitle("To Text");
 
         //definiert alle Elemente
         etMorse =(EditText)findViewById(R.id.etUserInput);

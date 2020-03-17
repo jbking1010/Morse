@@ -21,7 +21,7 @@ public class ToMorse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_morse);
-        setTitle("ToMorse");
+        setTitle("To Morse");
         etText = (EditText) findViewById(R.id.etText);
         etText.requestFocus();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -46,4 +46,27 @@ public class ToMorse extends AppCompatActivity {
         }
 
     }
+
+    /*@Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (maxHeight > 0){
+            int hSize = MeasureSpec.getSize(heightMeasureSpec);
+            int hMode = MeasureSpec.getMode(heightMeasureSpec);
+
+            switch (hMode){
+                case MeasureSpec.AT_MOST:
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(hSize, maxHeight), MeasureSpec.AT_MOST);
+                    break;
+                case MeasureSpec.UNSPECIFIED:
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(maxHeight, MeasureSpec.AT_MOST);
+                    break;
+                case MeasureSpec.EXACTLY:
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(hSize, maxHeight), MeasureSpec.EXACTLY);
+                    break;
+            }
+        }
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }*/
+
 }
