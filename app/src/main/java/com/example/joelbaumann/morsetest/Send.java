@@ -1,7 +1,10 @@
 package com.example.joelbaumann.morsetest;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -58,29 +61,49 @@ public class Send extends AppCompatActivity {
 
     public void convert(String code){
         String space = "   ";
-        String[] splitArray = code.split(space);
-        sendMorse(splitArray);
+        setCode(code);
+        final String[] splitArray = code.split(space);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle("Calibration");
+        builder.setMessage("The Light level will be calibrated after you press the confirm Button");
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        sendMorse(splitArray);
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        //sendMorse(splitArray);
+    }
+    public void setCode(String code){
+        output.setText(code);
     }
     public void sendMorse(String[] array){
         System.out.println(Arrays.toString(array));
+
         for(String s :array){
             for (int i = 0;i < s.length();i++){
                 switch (s.charAt(i)){
                     case '•':
-                        output.setText(output.getText().toString()+"•");
+                        //output.setText(output.getText().toString()+"•");
                         flash.flashShort();
                         break;
                     case '─':
-                        output.setText(output.getText().toString()+"─");
+                        //output.setText(output.getText().toString()+"─");
                         flash.flashLong();
                         break;
                     case '|':
-                        output.setText(output.getText().toString()+"|");
+                        //output.setText(output.getText().toString()+"|");
                         flash.flashPause();
                         break;
                 }
             }
-            output.setText(output.getText().toString()+"   ");
+            //output.setText(output.getText().toString()+"   ");
 
         }
     }
