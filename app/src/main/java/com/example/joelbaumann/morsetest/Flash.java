@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.SystemClock;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.MediaStore;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -18,6 +19,7 @@ public class Flash{
     CameraManager cameraManager;
      final MediaPlayer soundShort;
      final MediaPlayer soundLong;
+     final MediaPlayer soundpause;
      Activity activity;
      Vibrator vib;
 
@@ -28,6 +30,7 @@ public class Flash{
         vib = (Vibrator)activity.getSystemService(Context.VIBRATOR_SERVICE);
         soundShort = MediaPlayer.create(activity, R.raw.soundshort);
         soundLong = MediaPlayer.create(activity, R.raw.soundlong);
+        soundpause = MediaPlayer.create(activity, R.raw.soundpause);
         this.activity = activity;
 
     }
@@ -40,7 +43,7 @@ public class Flash{
         flash(350,soundLong);
     }
     //blitzt lange für einen Leerschkag
-    public void flashPause(){flash(500,soundPause);}
+    public void flashPause(){flash(500,soundpause);}
 
     //Blitz methode
     private void flash(int duration, MediaPlayer sound){
