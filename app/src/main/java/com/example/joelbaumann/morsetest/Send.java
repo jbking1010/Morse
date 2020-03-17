@@ -59,15 +59,6 @@ public class Send extends AppCompatActivity {
             }
         }
     }
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_ENTER){
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
-        }
-        return true;
-    }
-
     public void convert(String code){
         String space = "   ";
         setCode(code);
