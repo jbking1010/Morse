@@ -51,13 +51,14 @@
     <EditText
         android:id="@+id/etOutput"
         android:layout_width="344dp"
-        android:layout_height="363dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:focusable="false"
         android:hint="@string/Morse"
         android:scrollbars="vertical"
+
         android:inputType="textMultiLine"
         android:maxLines="150"
         android:singleLine="false"
