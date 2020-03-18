@@ -48,12 +48,7 @@ public class Morse{
 
 
     }
-    public void getMorse(){
 
-    }
-    public void getText(){
-
-    }
     //überprüft ob der eingegebene Morsecode den Vorgaben entspricht
     public boolean checkMorse(ArrayList<String> morse){
 

@@ -9,6 +9,10 @@ import android.hardware.SensorManager;
 import android.hardware.camera2.CameraManager;
 import android.support.v7.app.AppCompatActivity;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static android.content.Context.SENSOR_SERVICE;
 
 public class LightSensor extends AppCompatActivity {
@@ -84,16 +88,13 @@ public class LightSensor extends AppCompatActivity {
         }else if ((duration <= stopTime+75 && duration > wordTime+75) && duration >= stopTime-75){
             //wenn "stop" erkennt
             sensorManager.unregisterListener(lightSensorListener);
-            System.out.println("stoped");
+            //System.out.println("stoped");
+            stop();
         }
     }
-    //testing only
-    public void detectShort(float time){
-       // activity.out.setText("short   :"+time);
-    }
-    //testing only
-    public void detectLong(float time){
-        //activity.i.setText("long    :"+time);
-
+    public void stop(){
+        String[] array = activity.output.getText().toString().split(" ");
+        ArrayList<String> arrayList =new ArrayList<>(Arrays.asList(array));
+        activity.input.setText(morse.convertToText(arrayList));
     }
 }
