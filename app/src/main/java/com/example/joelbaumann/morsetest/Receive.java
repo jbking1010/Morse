@@ -39,6 +39,8 @@ public class Receive extends AppCompatActivity {
     }
     //confirmation popUp
     public void popUp(View view){
+        input.setText("");
+        output.setText("");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle("Calibration");
