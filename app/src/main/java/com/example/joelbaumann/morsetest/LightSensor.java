@@ -66,6 +66,7 @@ public class LightSensor extends AppCompatActivity {
             timing=false;
         }
     }
+    //erstellung der Zeit-Variablen
     long pauseTime = 0;
     long shortTime = 0;
     long longTime = 0;
@@ -75,6 +76,8 @@ public class LightSensor extends AppCompatActivity {
     //überprüft die Zeit des impulses und ordnet sie ein
     public void checkTime(float duration){
         System.out.println(duration);
+
+        //konfiguriet die Zeit variablen
         if (pauseTime == 0){
             pauseTime = (long)duration;
         }else if (shortTime == 0){
@@ -112,11 +115,13 @@ public class LightSensor extends AppCompatActivity {
             stop();
         }
     }}
+    //wenn das letzte Signal gesendet wurde
     public void stop(){
         String[] array = activity.output.getText().toString().split(" ");
         ArrayList<String> arrayList =new ArrayList<>(Arrays.asList(array));
 
 
+        //Error Handler
         try {
             activity.input.setText(morse.convertToText(arrayList));
 
