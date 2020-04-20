@@ -66,35 +66,65 @@ public class LightSensor extends AppCompatActivity {
             timing=false;
         }
     }
+    long pauseTime = 0;
+    long shortTime = 0;
+    long longTime = 0;
+    long wordTime = 0;
+    long stopTime = 0;
+
     //überprüft die Zeit des impulses und ordnet sie ein
     public void checkTime(float duration){
-        long pauseTime = 50;
-        long shortTime = 200;
-        long longTime = 350;
-        long wordTime = 500;
-        long stopTime = 750;
-        if (duration <= pauseTime+75 && duration >= pauseTime-75){
+        System.out.println(duration);
+        if (pauseTime == 0){
+            pauseTime = (long)duration;
+        }else if (shortTime == 0){
+            shortTime =(long)duration;
+        }else if (longTime == 0){
+            longTime =(long)duration;
+        }else if (wordTime == 0){
+            wordTime =(long)duration;
+        }else if (stopTime == 0){
+            stopTime =(long)duration;
+        }
+        else{
+        long buffer = 80;
+        /*long pauseTime = baseTime/10;
+        long shortTime = (baseTime/10)*3;
+        long longTime = baseTime/2;
+        long wordTime = (baseTime/10)*7;
+        long stopTime = baseTime;*/
+        if (duration <= pauseTime+buffer && duration >= pauseTime-buffer){
             //wenn "space" erkennt wurde
             activity.output.setText(activity.output.getText().toString()+" ");
-        }else if ((duration <= shortTime+75 && duration > pauseTime+75) && duration >= shortTime-75){
+        }else if ((duration <= shortTime+buffer && duration > pauseTime+buffer) && duration >= shortTime-buffer){
             //wenn "short" erkennt
             activity.output.setText(activity.output.getText().toString()+"•");
-        }else if ((duration <= longTime+75 && duration > shortTime+75) && duration >= longTime-75){
+        }else if ((duration <= longTime+buffer && duration > shortTime+buffer) && duration >= longTime-buffer){
             //wenn "long" erkennt
             activity.output.setText(activity.output.getText().toString()+"─");
-        }else if ((duration <= wordTime+75 && duration > longTime+75) && duration >= wordTime-75){
+        }else if ((duration <= wordTime+buffer && duration > longTime+buffer) && duration >= wordTime-buffer){
             //wenn "Wordende" erkennt
             activity.output.setText(activity.output.getText().toString()+"|");
-        }else if ((duration <= stopTime+75 && duration > wordTime+75) && duration >= stopTime-75){
+        }else if ((duration <= stopTime+buffer && duration > wordTime+buffer) && duration >= stopTime-buffer){
             //wenn "stop" erkennt
             sensorManager.unregisterListener(lightSensorListener);
             //System.out.println("stoped");
             stop();
         }
-    }
+    }}
     public void stop(){
         String[] array = activity.output.getText().toString().split(" ");
         ArrayList<String> arrayList =new ArrayList<>(Arrays.asList(array));
-        activity.input.setText(morse.convertToText(arrayList));
-    }
+
+
+        try {
+            activity.input.setText(morse.convertToText(arrayList));
+
+        }catch (Exception e) {
+            System.out.println("Invalid values");
+            activity.input.setText("Invalid Input");
+
+        }
+        }
+
 }

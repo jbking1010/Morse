@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class Receive extends AppCompatActivity {
     public EditText input;
     public EditText output;
     private TextView tvError;
+    public Button btn;
     LightSensor light;
 
     @Override
@@ -29,6 +31,7 @@ public class Receive extends AppCompatActivity {
         input.requestFocus();
         output= (EditText)findViewById(R.id.etMorse);
         tvError=(TextView)findViewById(R.id.tvError);
+        btn = (Button)findViewById(R.id.btnReceive);
         light = new LightSensor(this);
     }
 
@@ -39,6 +42,7 @@ public class Receive extends AppCompatActivity {
     }
     //confirmation popUp
     public void popUp(View view){
+        btn.setEnabled(false);
         input.setText("");
         output.setText("");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

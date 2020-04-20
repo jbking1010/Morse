@@ -60,7 +60,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="C:\Users\Joel\AndroidStudioProjects\Morse\app\src\main\res\mipmap-xxhdpi\AppIcon144.png" />
+                                      <entry key="foregroundImage" value="C:\Users\Joel\AndroidStudioProjects\Morse\app\src\main\res\mipmap-xxhdpi\appicon.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

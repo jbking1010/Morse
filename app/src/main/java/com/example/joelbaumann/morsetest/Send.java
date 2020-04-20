@@ -85,7 +85,11 @@ public class Send extends AppCompatActivity {
     }
     public void sendMorse(String[] array){
         System.out.println(Arrays.toString(array));
-
+        flash.flashPause();
+        flash.flashShort();
+        flash.flashLong();
+        flash.flashWord();
+        flash.flashStop();
         for(String s :array){
             for (int i = 0;i < s.length();i++){
                 switch (s.charAt(i)){
