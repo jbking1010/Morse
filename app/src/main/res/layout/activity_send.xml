@@ -58,7 +58,6 @@
         android:focusable="false"
         android:hint="@string/Morse"
         android:inputType="textMultiLine"
-
         android:maxLines="150"
         android:scrollbars="vertical"
         android:singleLine="false"
