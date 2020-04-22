@@ -64,6 +64,7 @@ public class Send extends AppCompatActivity {
         setCode(code);
         final String[] splitArray = code.split(space);
 
+        //Popup box für bestätigung
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle("Send this Message");
@@ -78,13 +79,13 @@ public class Send extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-        //sendMorse(splitArray);
     }
     public void setCode(String code){
         output.setText(code);
     }
     public void sendMorse(String[] array){
         System.out.println(Arrays.toString(array));
+        //Kalibriert alle Signale
         flash.flashPause();
         flash.flashShort();
         flash.flashLong();
@@ -108,7 +109,6 @@ public class Send extends AppCompatActivity {
                 }
             }
             flash.flashPause();
-            //output.setText(output.getText().toString()+"   ");
 
         }
         flash.flashStop();

@@ -11,9 +11,7 @@ import android.widget.TextView;
 public class ToMorse extends AppCompatActivity {
 
     Morse morse = new Morse();
-    //input
     EditText etText;
-    //output
     EditText etOutput;
     TextView tvError;
 

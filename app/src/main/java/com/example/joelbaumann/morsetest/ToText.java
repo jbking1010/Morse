@@ -15,9 +15,7 @@ public class ToText extends AppCompatActivity implements View.OnClickListener {
     ArrayList<String> input = new ArrayList<String>();
     String str = "";
 
-    //input
     EditText etMorse;
-    //output
     EditText etText;
     TextView tvError;
 

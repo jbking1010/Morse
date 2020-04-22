@@ -1,8 +1,6 @@
 package com.example.joelbaumann.morsetest;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -45,12 +43,15 @@ public class Settings extends AppCompatActivity {
     }
 
     public void saveSettings(View view) {
+        //Erstellt eine Shared Object welches die EInstellungen Speichert.
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
+        //Etstellt die drei Einstellmöglichkeiten
         editor.putBoolean(SWITCH_SOUND,sound.isChecked()).commit();
         editor.putBoolean(SWITCH_VIBRATION,vibration.isChecked()).commit();
         editor.putBoolean(SWITCH_DARK,dark.isChecked()).commit();
+        //Setzt das Theme des Programms
         if(getDarkSetting()){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             finish();
@@ -61,18 +62,19 @@ public class Settings extends AppCompatActivity {
             finish();
             startActivity(getIntent());
         }
-
     }
+    //gibt den wert "Sound" zurück
     public boolean getSoundSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_SOUND,true);
     }
+    //gibt den wert "Vibration" zurück
 
     public boolean getVibrationSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_VIBRATION,true);
     }
-
+    //gibt den wert "Dark" zurück
     public boolean getDarkSetting(){
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         return sp.getBoolean(SWITCH_DARK,true);

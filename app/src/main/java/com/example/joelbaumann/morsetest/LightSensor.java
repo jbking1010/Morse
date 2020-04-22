@@ -91,11 +91,7 @@ public class LightSensor extends AppCompatActivity {
         }
         else{
         long buffer = 80;
-        /*long pauseTime = baseTime/10;
-        long shortTime = (baseTime/10)*3;
-        long longTime = baseTime/2;
-        long wordTime = (baseTime/10)*7;
-        long stopTime = baseTime;*/
+
         if (duration <= pauseTime+buffer && duration >= pauseTime-buffer){
             //wenn "space" erkennt wurde
             activity.output.setText(activity.output.getText().toString()+" ");
@@ -111,7 +107,6 @@ public class LightSensor extends AppCompatActivity {
         }else if ((duration <= stopTime+buffer && duration > wordTime+buffer) && duration >= stopTime-buffer){
             //wenn "stop" erkennt
             sensorManager.unregisterListener(lightSensorListener);
-            //System.out.println("stoped");
             stop();
         }
     }}

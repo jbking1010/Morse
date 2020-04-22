@@ -40,12 +40,7 @@ public class Home extends AppCompatActivity {
 
 
 
-    /*/public void loadHome(MainActivity main){
-        this.main = main;
-        main.setContentView(R.layout.activity_home);
-        main.setTitle("Home");
-        ImageView iv = findViewById(R.id.ivSettings);
-    }*/
+
     public void loadSettings(View view) {
         startActivity(new Intent(this, Settings.class));
     }
